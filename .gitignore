@@ -1,3 +1,4 @@
 /env.sh
 /.bundle
 /vendor/bundle
+/bin/
