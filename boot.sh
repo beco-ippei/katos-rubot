@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# default
 if [ -f env.sh ];then
   source ./env.sh
 fi
@@ -17,7 +18,7 @@ fi
 user_id=`echo $auth_info | jq '.user_id'`
 
 start_slackbot() {
-  bundle exec bin/slackbot --name=slackbot &
+  bundle exec bin/slackbot "--name=${PROCESS_NAME}" &
 }
 
 while true; do
@@ -26,7 +27,8 @@ while true; do
     break
   fi
 
-  pid=`pgrep -f 'name=slackbot'`
+  #TODO: move to checker
+  pid=`pgrep -f "name=${PROCESS_NAME}"`
   if [ "${pid}" = "" ];then
     start_slackbot
   else
