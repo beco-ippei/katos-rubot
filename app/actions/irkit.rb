@@ -1,7 +1,7 @@
 bot = SlackBot.instance
 
 IRKIT_SCRIPT = ENV['IRKIT_SCRIPT']
-def irkit_cmd(swith)
+def irkit_cmd(switch)
   puts "aircon turn #{switch}"
   %x[#{IRKIT_SCRIPT} #{switch}]
 end
