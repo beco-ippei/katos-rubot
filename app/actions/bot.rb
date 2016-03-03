@@ -24,5 +24,6 @@ end
 
 bot.hear :dm, /shutdown/ do |msg|
   msg.reply "ok. I'm shutting down ....\nBye!"
+  `touch ./stop`
   bot.stop
 end
