@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # default
 if [ -f env.sh ];then
